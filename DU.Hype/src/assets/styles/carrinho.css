@@ -1,0 +1,260 @@
+/* -------------------------
+   PÁGINA DO CARRINHO
+------------------------- */
+
+/* Container principal da página */
+.cart-page-container {
+    max-width: 1440px; /* Largura máxima para o conteúdo */
+    margin: 0 auto; /* Centraliza na página */
+    padding: 150px 40px 50px 40px; /* Espaçamento: Topo (para header), Laterais, Fundo */
+}
+
+.cart-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Layout de 2 colunas */
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Coluna da esquerda é 2x maior que a da direita */
+    gap: 30px; /* Espaço entre as colunas */
+    align-items: flex-start;
+}
+
+/* --- Coluna da Esquerda: Lista de Itens --- */
+.cart-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    border: 1px solid #E0E0E0;
+    border-radius: 25px;
+}
+
+.item-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.item-details {
+    flex-grow: 1; /* Ocupa o espaço restante */
+}
+
+.item-brand {
+    background-color: #1C1C1C;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.item-name {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.item-size {
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.size-tag {
+    background-color: #1C1C1C;
+    color: #fff;
+    font-weight: 600;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-price-section {
+    text-align: right;
+}
+
+.item-price {
+    font-size: 24px;
+    font-weight: 600;
+    display: block;
+}
+
+.remove-button {
+    background: none;
+    border: none;
+    color: #888;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+/* --- Coluna da Direita: Resumo --- */
+.order-summary-sidebar {
+    position: sticky; /* Fica fixo ao rolar a página */
+    top: 150px; /* Distância do topo para começar a 'grudar' */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.summary-card {
+    border: 1px solid #E0E0E0;
+    background-color: #F9F9F9;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.summary-card h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.summary-card > p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.summary-subtitle {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px !important;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.summary-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.summary-item-details {
+    flex-grow: 1;
+}
+
+.summary-item-details p {
+    font-weight: 500;
+    margin: 0;
+}
+
+.size-tag-summary {
+    background-color: #1C1C1C;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-item-price {
+    font-weight: 500;
+}
+
+.remove-button-summary {
+    background: none;
+    border: none;
+    color: #888;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 0;
+    display: block; /* Para ocupar a linha inteira */
+    text-align: right;
+    margin-top: 5px;
+}
+
+.summary-divider {
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 15px 0;
+}
+
+.summary-totals {
+    margin: 20px 0;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.total-line span:first-child {
+    color: #555;
+}
+
+.total-line span:last-child {
+    font-weight: 600;
+}
+
+.coupon-field {
+    border: 2px dashed #ccc;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.coupon-field span {
+    font-weight: 600;
+    color: #555;
+}
+
+.btn-checkout {
+    background-color: #1C1C1C;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-checkout:hover {
+    background-color: #444;
+}
+
+/* --- Responsividade para Telas Menores --- */
+@media (max-width: 992px) {
+    .cart-layout {
+        grid-template-columns: 1fr; /* As colunas ficam uma sobre a outra */
+    }
+    
+    .order-summary-sidebar {
+        position: static; /* Remove o 'sticky' em telas menores */
+    }
+}
