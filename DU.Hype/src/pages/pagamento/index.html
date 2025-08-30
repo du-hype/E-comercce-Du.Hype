@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Pagamento</title>
+    
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .main-header img {
+            height: 30px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #555;
+            margin: 0 1rem;
+        }
+
+        .header-icons img {
+            height: 24px;
+            margin-left: 1rem;
+        }
+
+        /* Layout principal */
+        .payment-container {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .payment-section, .summary-section > div {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .payment-section {
+            flex-basis: 600px;
+        }
+
+        .summary-section {
+            flex-basis: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .delivery-address, .order-summary {
+            border: 1px dashed #ccc;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Opções de pagamento */
+        .payment-options {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-method {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .payment-method:hover {
+            border-color: #aaa;
+        }
+
+        .payment-method.active {
+            border-color: #000;
+            background-color: #e8e8e8;
+        }
+
+        .payment-method img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-method span {
+            font-weight: 600;
+        }
+
+        /* Detalhes de pagamento */
+        .payment-details {
+            display: none;
+        }
+
+        .payment-details.active {
+            display: block;
+        }
+
+        .payment-details input, .payment-details select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .card-logos img {
+            width: 150px;
+            margin-bottom: 1rem;
+        }
+
+        .card-inputs {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Botões */
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: #000;
+            color: #fff;
+            margin-top: 1rem;
+        }
+
+        /* Resumo da compra */
+        h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-item img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .product-info {
+            flex-grow: 1;
+        }
+
+        .product-info p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .product-info span {
+            display: inline-block;
+            background-color: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-top: 4px;
+        }
+
+        .price {
+            font-weight: bold;
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #999;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .summary-details {
+            margin-top: 1.5rem;
+            border-top: 1px dashed #ccc;
+            padding-top: 1.5rem;
+        }
+
+        .summary-details p {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+        }
+
+        .coupon-field {
+            margin: 1rem 0;
+        }
+
+        .coupon-field input {
+            border: 1px dashed #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="https://via.placeholder.com/150x50?text=DUHYPE" alt="Logo Duhype">
+        </div>
+        <nav class="main-nav">
+            <a href="#">Início</a>
+            <a href="#">Marcas</a>
+            <a href="#">Feed</a>
+            <a href="#">Novidades</a>
+        </nav>
+        <div class="header-icons">
+            <img src="https://via.placeholder.com/24/000000?text=S" alt="Pesquisar">
+            <img src="https://via.placeholder.com/24/000000?text=C" alt="Carrinho">
+            <img src="https://via.placeholder.com/24/000000?text=P" alt="Perfil">
+        </div>
+    </header>
+
+    <main class="payment-container">
+        <div class="payment-section">
+            <h2>Método de Pagamento</h2>
+            <div class="payment-options">
+                <button class="payment-method active" data-method="card">
+                    <img src="https://via.placeholder.com/50/000000?text=Cartão" alt="Cartão">
+                    <span>Cartão</span>
+                </button>
+                <button class="payment-method" data-method="pix">
+                    <img src="https://via.placeholder.com/50/000000?text=Pix" alt="Pix">
+                    <span>Pix</span>
+                </button>
+                <button class="payment-method" data-method="boleto">
+                    <img src="https://via.placeholder.com/50/000000?text=Boleto" alt="Boleto">
+                    <span>Boleto</span>
+                </button>
+            </div>
+
+            <div class="payment-details card-details active">
+                <input type="text" placeholder="1234 1234 1234 1234">
+                <div class="card-logos">
+                    <img src="https://via.placeholder.com/150x30?text=VISA+MASTERCARD" alt="Logos de cartões">
+                </div>
+                <div class="card-inputs">
+                    <input type="text" placeholder="MM / YY">
+                    <input type="text" placeholder="CVC">
+                </div>
+                <select>
+                    <option>Brasil</option>
+                </select>
+            </div>
+
+            <div class="payment-details pix-details">
+                <p>O código Pix para pagamento será exibido após a finalização da compra.</p>
+            </div>
+
+            <div class="payment-details boleto-details">
+                <p>O boleto para pagamento será gerado e enviado por e-mail após a finalização da compra.</p>
+            </div>
+        </div>
+
+        <aside class="summary-section">
+            <div class="delivery-address">
+                <h3>Endereço de Entrega</h3>
+                <p>Rua Projeto Integrador Senac, 110</p>
+                <button class="btn btn-secondary">CALCULAR FRETE</button>
+            </div>
+
+            <div class="order-summary">
+                <h3>Resumo da Compra</h3>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/80x80?text=PUMA" alt="Puma 180 Strong Gray">
+                    <div class="product-info">
+                        <p>Puma 180 Strong Gray</p>
+                        <span>42</span>
+                    </div>
+                    <span class="price">R$949,99</span>
+                    <button class="remove-btn">Remover</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/80x80?text=PUMA" alt="Puma 180 Strong Gray">
+                    <div class="product-info">
+                        <p>Puma 180 Strong Gray</p>
+                        <span>42</span>
+                    </div>
+                    <span class="price">R$949,99</span>
+                    <button class="remove-btn">Remover</button>
+                </div>
+
+                <div class="summary-details">
+                    <p>Produtos (2): <span class="summary-value">R$1.899,98</span></p>
+                    <p>Frete: <span class="summary-value">R$9,98</span></p>
+                    <div class="coupon-field">
+                        <input type="text" placeholder="CUPOM: DIGITE SEU CUPOM">
+                    </div>
+                    <button class="btn btn-primary">FINALIZAR COMPRA</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const paymentMethods = document.querySelectorAll('.payment-method');
+            const paymentDetails = document.querySelectorAll('.payment-details');
+
+            paymentMethods.forEach(button => {
+                button.addEventListener('click', () => {
+                    paymentMethods.forEach(item => item.classList.remove('active'));
+                    paymentDetails.forEach(item => item.classList.remove('active'));
+
+                    button.classList.add('active');
+
+                    const method = button.getAttribute('data-method');
+                    const correspondingDetails = document.querySelector(`.${method}-details`);
+                    if (correspondingDetails) {
+                        correspondingDetails.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

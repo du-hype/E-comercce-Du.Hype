@@ -117,7 +117,15 @@
                         <span>CUPOM:</span> DIGITE SEU CUPOM
                     </div>
 
-                    <button class="btn-checkout">ESCOLHER MÉTODO DE PAGAMENTO</button>
+                   <button class="btn-checkout" onclick="irParaPagamento()">ESCOLHER MÉTODO DE PAGAMENTO</button>
+
+<script>
+  function irParaPagamento() {
+    // Redireciona para a página de pagamento
+    window.location.href = "../pagamento/index.html";
+  }
+</script>
+
                 </div>
             </aside>
         </div>

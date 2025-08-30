@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dime x Adidas ADI2000 - DUHYPE</title>
+  <!-- Link para o CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================== CABEÇALHO ================== -->
+  <header>
+    <div class="logo">DUHYPE</div>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Marcas</a></li>
+        <li><a href="#">Feed</a></li>
+        <li><a href="#">Novidades</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <!-- Botões clicáveis -->
+      <button id="searchBtn">🔍</button>
+      <button id="userBtn">👤</button>
+      <button id="cartBtn">🛒</button>
+    </div>
+  </header>
+
+  <!-- ================== CONTEÚDO PRINCIPAL ================== -->
+  <main>
+    <section class="produto">
+      <!-- Espaço para as imagens do tênis -->
+      <div class="galeria">
+        <div class="thumbs">
+          <img src="DU.Hype/src/assets/Images/dunk-0.jpg" alt="dunk">
+          <img src="DU.Hype/src/assets/Images/dunk-0.jpg" alt="dunk">
+          <img src="DU.Hype/src/assets/Images/dunk-0.jpg" alt="dunk">
+          <img src="DU.Hype/src/assets/Images/dunk-0.jpg" alt="dunk">
+        </div>
+        <div class="imagem-principal">
+          <img src="DU.Hype/src/assets/Images/air max 90 - 2.JP" alt="Tênis principal">
+        </div>
+      </div>
+
+      <!-- Informações do produto -->
+      <div class="detalhes">
+        <h2>Dime x adidas ADI2000 <br> Light Brown Chalk White</h2>
+        <div class="avaliacao">★★★★☆ (45 avaliações)</div>
+        <p class="preco">R$ 289,89 <span class="de">de R$ 489,90</span></p>
+
+        <!-- Botões de tamanho -->
+        <div class="tamanhos">
+          <button class="size">38</button>
+          <button class="size ativo">40</button>
+          <button class="size">41</button>
+          <button class="size">42</button>
+        </div>
+
+        <!-- Botão comprar -->
+        <button id="comprarBtn" class="comprar">COMPRAR</button>
+      </div>
+    </section>
+
+    <!-- ================== CARACTERÍSTICAS ================== -->
+    <section class="caracteristicas">
+      <h3>Características</h3>
+      <p>
+        O ADI2000 traz de volta o espírito do skate do início dos anos 2000 com um design cheio de atitude. 
+        A collab com a Dime coloca esse conceito à prova: mesmo sem tanta sensibilidade da prancha, o modelo entrega uma resistência impressionante, 
+        com sobreposições de painéis costurados e uma sola de borracha robusta, além de um suporte de calcanhar pensado para aguentar o impacto. 
+        <br><br>
+        O Dime x adidas ADI2000 Light Brown Chalk White, lançado em 29/04/2024 na cor cinza, já está disponível na DU.HYPE. 
+        Garanta o seu com confiança e originalidade garantida.
+      </p>
+    </section>
+
+    <!-- ================== SEMELHANTES ================== -->
+    <section class="semelhantes">
+      <h3>Semelhantes</h3>
+      <div class="produtos">
+        <div class="card">
+          <p class="marca">PUMA</p>
+          <img src="imagens/puma.jpg" alt="Puma 180 Strong Gray">
+          <p>Puma 180 Strong Gray</p>
+          <p class="preco">R$949,99</p>
+          <button class="comprar">COMPRAR</button>
+        </div>
+
+        <div class="card">
+          <p class="marca">NIKE</p>
+          <img src="imagens/nike.jpg" alt="Nike Dunk Nature Blue">
+          <p>Dunk Nature Blue Tint</p>
+          <p class="preco">R$999,99</p>
+          <button class="comprar">COMPRAR</button>
+        </div>
+
+        <div class="card">
+          <p class="marca">ADIDAS</p>
+          <img src="imagens/adidas.jpg" alt="Adidas ADI2000">
+          <p>Dime x Adidas ADI2000</p>
+          <p class="preco">R$1.199,00</p>
+          <button class="comprar">COMPRAR</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================== FOOTER ================== -->
+  <footer>
+    <p>© 2024 DUHYPE - Todos os direitos reservados</p>
+  </footer>
+
+  <!-- ================== JAVASCRIPT DIRETO NO HTML ================== -->
+  <script>
+    // ================== TROCAR TAMANHO ==================
+    const sizeButtons = document.querySelectorAll(".size");
+    sizeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        sizeButtons.forEach(b => b.classList.remove("ativo"));
+        btn.classList.add("ativo");
+      });
+    });
+
+    // ================== BOTÃO COMPRAR ==================
+    document.getElementById("comprarBtn").addEventListener("click", () => {
+      alert("Produto adicionado ao carrinho!");
+    });
+
+    // ================== BOTÕES DO TOPO ==================
+    document.getElementById("searchBtn").addEventListener("click", () => {
+      alert("Função de busca em desenvolvimento...");
+    });
+
+    document.getElementById("userBtn").addEventListener("click", () => {
+      alert("Página de login em desenvolvimento...");
+    });
+
+    document.getElementById("cartBtn").addEventListener("click", () => {
+      alert("Abrindo carrinho...");
+    });
+  </script>
+</body>
+</html>

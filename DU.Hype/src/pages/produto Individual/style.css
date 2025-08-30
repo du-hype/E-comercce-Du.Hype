@@ -1,0 +1,187 @@
+/* =============== RESET GERAL =============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* =============== CABEÇALHO =============== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+.icons button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* =============== PRODUTO =============== */
+.produto {
+  display: flex;
+  gap: 50px;
+  padding: 40px;
+}
+
+.galeria {
+  display: flex;
+  gap: 15px;
+}
+
+.thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbs img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.imagem-principal img {
+  width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.detalhes h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.avaliacao {
+  margin: 5px 0 15px;
+  color: #f39c12;
+}
+
+.preco {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.preco .de {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #888;
+  margin-left: 10px;
+}
+
+.tamanhos {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.size {
+  padding: 10px 15px;
+  border: 1px solid #333;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.size.ativo {
+  background: #333;
+  color: #fff;
+}
+
+.comprar {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* =============== CARACTERÍSTICAS =============== */
+.caracteristicas {
+  padding: 40px;
+  border-top: 1px solid #ddd;
+}
+
+.caracteristicas h3 {
+  margin-bottom: 15px;
+}
+
+/* =============== PRODUTOS SEMELHANTES =============== */
+.semelhantes {
+  padding: 40px;
+}
+
+.semelhantes h3 {
+  margin-bottom: 20px;
+}
+
+.produtos {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card .marca {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* =============== FOOTER =============== */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #555;
+}
