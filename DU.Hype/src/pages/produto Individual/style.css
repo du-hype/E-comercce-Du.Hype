@@ -13,38 +13,69 @@ body {
 }
 
 /* =============== CABEÇALHO =============== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: #f8f8f8;
-  border-bottom: 1px solid #ddd;
+.main-header {
+    position: fixed;
+    top: 30px;
+    left: 140px;
+    right: 140px;
+    max-width: 1920px;
+    margin: 0 auto;
+    z-index: 1000;
+    height: 85px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: rgba(168, 168, 168, 0.3);
+    border-radius: 100px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
+.logo img {
+    height: 63px;
+    width: auto;
 }
 
-nav a {
-  text-decoration: none;
-  color: #222;
-  font-weight: 500;
+.main-nav ul {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+    padding-top: 15px;
 }
 
-.icons button {
-  background: none;
-  border: none;
-  font-size: 20px;
-  margin-left: 15px;
-  cursor: pointer;
+.main-nav a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1C1C1C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: #D70004;
+}
+
+.header-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.header-icons a {
+    font-size: 28px;
+    color: #1C1C1C;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #D70004;
 }
 
 /* =============== PRODUTO =============== */

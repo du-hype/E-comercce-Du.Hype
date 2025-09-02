@@ -66,6 +66,7 @@ body {
 .main-nav a.active,
 .main-nav a:hover {
     color: #D70004;
+    text-decoration: none; /* Adicione esta linha */
 }
 
 .header-icons {
@@ -81,7 +82,7 @@ body {
 
 .header-icons a:hover {
     color: #D70004;
-}   
+}
 
 
 /* Container principal da página */
