@@ -2,105 +2,119 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Carrinho</title>
-    <link rel="stylesheet" href="../../assets/styles/carrinho.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - DU.HYPE</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="/DU.Hype/src/assets/styles/carrinho.css">
 </head>
 
 <body>
+
     <header class="main-header">
         <div class="header-container">
-            <a href="/DU.Hype/index.html" class="logo">
+            <a href="/index.html" class="logo">
                 <img src="/DU.Hype/src/assets/Images/LogoDu.Hype.svg" alt="Logo DUHYPE">
             </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="src/pages/marcas/index.html">Marcas</a></li>
-                    <li><a href="src/pages/feed/index.html">Feed</a></li>
-                    <li><a href="src/pages/novidades/index.html">Novidades</a></li>
+                    <li><a href="/DU.Hype/index.html">Início</a></li>
+                    <li><a href="/DU.Hype/src/pages/marcas/index.html">Marcas</a></li>
+                    <li><a href="/DU.Hype/src/pages/feed/index.html">Feed</a></li>
+                    <li><a href="/DU.Hype/src/pages/novidades/index.html">Novidades</a></li>
                 </ul>
             </nav>
             <div class="header-icons">
-               <a href="#" aria-label="Pesquisar"><img src="/DU.Hype/src/assets/Images/Search.svg" alt=""></a>
-                <a href="src/pages/carrinho/index.html" aria-label="Carrinho"><img src="/DU.Hype/src/assets/Images/Cart.svg" alt=""></a>
-                <a href="src/pages/account/index.html" aria-label="Perfil do usuário"><img src="/DU.Hype/src/assets/Images/Account.svg" alt=""></a>
+                <a href="#" aria-label="Pesquisar"><img src="/DU.Hype/src/assets/Images/Search.svg"
+                        alt="Ícone de Pesquisa"></a>
+                <a href="#" aria-label="Carrinho"><img src="/DU.Hype/src/assets/Images/Cart.svg"
+                        alt="Ícone de Carrinho"></a>
+                <a href="#" aria-label="Perfil do usuário"><img src="/DU.Hype/src/assets/Images/Account.svg"
+                        alt="Ícone de Perfil"></a>
             </div>
         </div>
     </header>
 
-    <main class="cart-page-container">
+    <main class="cart-container">
         <h1 class="cart-title">Seu Carrinho</h1>
-
         <div class="cart-layout">
-            <div class="cart-items-list">
+
+            <section class="cart-items">
                 <div class="cart-item-card">
-                    <img src="/DU.Hype/src/assets/Images/19.jpg" alt="Puma 180 Strong Gray" class="item-image">
+                    <div class="item-image-wrapper">
+                        <img src="/DU.Hype/src/assets/Images/26.jpg" alt="Tênis Puma 180 Strong Gray">
+                    </div>
                     <div class="item-details">
                         <span class="item-brand">PUMA</span>
                         <p class="item-name">Puma 180 Strong Gray</p>
-                        <div class="item-size">Tamanho: <span class="size-tag">38</span></div>
+                        <div class="item-size-info">
+                            <span>Tamanho:</span>
+                            <span class="size-tag">38</span>
+                        </div>
                     </div>
-                    <div class="item-price-section">
+                    <div class="item-price-actions">
                         <span class="item-price">R$949,99</span>
                         <button class="remove-button">Remover</button>
                     </div>
                 </div>
-
                 <div class="cart-item-card">
-                    <img src="/DU.Hype/src/assets/Images/19.jpg" alt="Puma 180 Strong Gray" class="item-image">
+                    <div class="item-image-wrapper">
+                        <img src="/DU.Hype/src/assets/Images/Ultraboost-0.jpg" alt="Tênis Puma 180 Strong Gray">
+                    </div>
                     <div class="item-details">
                         <span class="item-brand">PUMA</span>
                         <p class="item-name">Puma 180 Strong Gray</p>
-                        <div class="item-size">Tamanho: <span class="size-tag">40</span></div>
+                        <div class="item-size-info">
+                            <span>Tamanho:</span>
+                            <span class="size-tag">40</span>
+                        </div>
                     </div>
-                    <div class="item-price-section">
+                    <div class="item-price-actions">
                         <span class="item-price">R$949,99</span>
                         <button class="remove-button">Remover</button>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <aside class="order-summary-sidebar">
+            <aside class="order-summary">
+
                 <div class="summary-card">
-                    <h2>Endereço de Entrega</h2>
-                    <p>Endereço não encontrado</p>
-                    <button class="btn-checkout">CADASTRAR ENDEREÇO</button>
+                    <div class="address-state" id="address-state-not-found">
+                        <h2 class="summary-title">Endereço de Entrega</h2>
+                        <p class="address-placeholder-text">Endereço não encontrado</p>
+                        <button class="btn-primary">Cadastrar Endereço</button>
+                    </div>
                 </div>
 
                 <div class="summary-card">
-                    <h2>Resumo da Compra</h2>
-                    <p class="summary-subtitle">Produtos</p>
-                    
-                    <div class="summary-item">
-                        <img src="/DU.Hype/src/assets/Images/19.jpg" alt="Puma 180 Strong Gray">
-                        <div class="summary-item-details">
-                            <p>Puma 180 Strong Gray</p>
-                            <span class="size-tag-summary">38</span>
+                    <h2 class="summary-title">Resumo da Compra</h2>
+                    <div class="summary-items-list">
+                        <div class="summary-item">
+                            <img src="/DU.Hype/src/assets/Images/tn-0.jpg" alt="Resumo do Puma 180">
+                            <div class="summary-item-details">
+                                <p>Puma 180 Strong Gray</p>
+                                <span class="size-tag-summary">38</span>
+                            </div>
+                            <span class="summary-item-price">R$949,99</span>
                         </div>
-                        <span class="summary-item-price">R$949,99</span>
-                    </div>
-                    <button class="remove-button-summary">Remover</button>
-
-                    <hr class="summary-divider">
-
-                    <div class="summary-item">
-                        <img src="/DU.Hype/src/assets/Images/19.jpg" alt="Puma 180 Strong Gray">
-                        <div class="summary-item-details">
-                            <p>Puma 180 Strong Gray</p>
-                            <span class="size-tag-summary">40</span>
+                        <button class="remove-button-summary">Remover</button>
+                        <hr class="summary-divider">
+                        <div class="summary-item">
+                            <img src="/DU.Hype/src/assets/Images/37.jpg" alt="Resumo do Puma 180">
+                            <div class="summary-item-details">
+                                <p>Puma 180 Strong Gray</p>
+                                <span class="size-tag-summary">40</span>
+                            </div>
+                            <span class="summary-item-price">R$949,99</span>
                         </div>
-                        <span class="summary-item-price">R$949,99</span>
+                        <button class="remove-button-summary">Remover</button>
                     </div>
-                    <button class="remove-button-summary">Remover</button>
-                    
-                    <hr class="summary-divider">
 
                     <div class="summary-totals">
                         <div class="total-line">
@@ -112,22 +126,14 @@
                             <span>R$9,98</span>
                         </div>
                     </div>
-
                     <div class="coupon-field">
-                        <span>CUPOM:</span> DIGITE SEU CUPOM
+                        <label for="coupon">CUPOM:</label>
+                        <input type="text" id="coupon" placeholder="DIGITE SEU CUPOM">
                     </div>
-
-                   <button class="btn-checkout" onclick="irParaPagamento()">ESCOLHER MÉTODO DE PAGAMENTO</button>
-
-<script>
-  function irParaPagamento() {
-    // Redireciona para a página de pagamento
-    window.location.href = "../pagamento/index.html";
-  }
-</script>
-
+                    <button class="btn-primary">Escolher método de pagamento</button>
                 </div>
             </aside>
+
         </div>
     </main>
 

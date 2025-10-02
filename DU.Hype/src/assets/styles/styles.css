@@ -83,7 +83,6 @@ body {
 ------------------------- */
 main {
     padding-top: 120px;
-    /* Adiciona espaço para o header não cobrir o conteúdo inicial */
 }
 
 /* -------------------------
@@ -108,7 +107,6 @@ main {
     width: 100%;
     height: 100%;
     z-index: 1;
-    /* Camada de trás */
 }
 
 .hero-section .carousel-inner,
@@ -153,7 +151,6 @@ main {
     gap: 16px;
 }
 
-/* Botões gerais */
 .btn {
     padding: 10px 32px;
     border-radius: 40px;
@@ -166,13 +163,10 @@ main {
     box-shadow: #1c1c1c1f 0px 0px 4px, #1c1c1c1f 0px 0px 4px;
 }
 
-/* Efeito ao clicar (diminuir) */
 .btn:active {
     transform: scale(0.95);
-    /* Efeito de pressionar */
 }
 
-/* Botão primário */
 .btn-primary {
     background-color: #D70004;
     color: #f1f1f1;
@@ -184,7 +178,6 @@ main {
     border-color: transparent;
 }
 
-/* Botão secundário */
 .btn-secondary {
     background-color: #F1F1F1;
     color: #1C1C1C;
@@ -196,7 +189,6 @@ main {
     border: 2px solid #f1f1f1;
 }
 
-/* Indicadores personalizados */
 .carousel-indicators-custom {
     position: absolute;
     left: 50%;
@@ -208,7 +200,6 @@ main {
     gap: 18px;
     align-items: center;
     z-index: 3;
-    /* Camada da frente */
 }
 
 .indicator-dot {
@@ -225,12 +216,12 @@ main {
 }
 
 /* -------------------------
-   SEÇÃO DE PRODUTOS
+   SEÇÃO DE PRODUTOS (CÓDIGO CORRIGIDO)
 ------------------------- */
 .product-showcase {
     max-width: 1920px;
-    margin: 70px 95px;
-    padding: 0 50px;
+    margin: 70px 140px;
+    padding: 0;
 }
 
 .section-title {
@@ -240,84 +231,74 @@ main {
     text-align: left;
 }
 
-/* Grid limitado a 3 colunas; cada coluna tem no mínimo 300px */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
 }
 
-/* Cards ocupam 100% da célula do grid (removendo fit-content que forçava tamanhos inconsistentes) */
+a.product-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .product-card {
-    background-color: transparent;
-    border: 1px solid #1c1c1c;
-    border-radius: 30px;
-    padding: 30px;
+    background-color: #FFFFFF;
+    /* Alterado para branco */
+    border: 1px solid #424242;
+    /* Borda sutil para o fundo branco */
+    border-radius: 24px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-}
-
-/* Responsivo: 2 colunas em telas médias, 1 coluna em telas pequenas */
-@media (max-width: 980px) {
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 560px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.566);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .product-image-container {
-    margin-bottom: 30px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .product-image-container img {
     width: 100%;
     height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: contain;
 }
 
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 .product-brand {
-    font-size: 18px;
-    color: #f1f1f1;
-    max-width: fit-content;
+    font-size: 12px;
+    color: #FFFFFF;
     background-color: #1C1C1C;
-    padding: 10px 20px;
+    padding: 6px 14px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     border-radius: 100px;
     text-transform: uppercase;
+    width: fit-content;
 }
 
 .product-name {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     color: #1a1a1a;
-    line-height: 1;
-    margin-bottom: 20px;
-}
-
-.product-price {
-    font-size: 28px;
-    font-weight: 500;
-    margin-bottom: 0;
-}
-
-.product-actions {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    height: 50px;
+    line-height: 1.2;
+    margin-bottom: 12px;
 }
 
 .product-footer {
@@ -325,39 +306,51 @@ main {
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    height: 50px;
-    margin-top: 20px;
+    margin-top: auto;
 }
 
-/* Ajuste para ter altura idêntica entre cart e buy */
-.cart-btn,
-.buy-btn {
+.product-price {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1C1C1C;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
     border: none;
     border-radius: 100px;
-    font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;           /* mesma altura do container/product-actions */
-    padding: 0 30px;        /* padding vertical zero já que a altura é fixa */
-    color: #ffffff;
-    font-size: 18px;        /* mesma fonte para aparência consistente */
-    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.action-btn:hover {
+    background-color: #444;
 }
 
 .cart-btn {
-    background-color: #1C1C1C;
-    max-width: fit-content;
+    width: 48px;
+    height: 48px;
+    /* Altura especificada aqui para manter a consistência */
+    font-size: 16px;
+
 }
 
 .buy-btn {
-    background-color: #1C1C1C;
-    max-width: fit-content;
-    /* removido max-height e padding vertical diferente */
-}
-
-.cart-btn:hover,
-.buy-btn:hover {
-    background-color: #444444;
+    padding: 8px 32px;
+    /* Padding exato conforme sua instrução */
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
