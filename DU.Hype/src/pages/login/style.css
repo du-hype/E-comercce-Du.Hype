@@ -12,6 +12,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #f0f2f5;
+    /* Adicionado para garantir que o conteúdo não seja cortado */
+    overflow-x: hidden;
 }
 
 /* ================================================= */
@@ -19,13 +21,20 @@ body {
 /* ================================================= */
 
 .header-container {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 280px);
+    /* --- REMOVIDO --- */
+    /* position: absolute; */
+    /* top: 30px; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    
+    /* --- ADICIONADO/MODIFICADO --- */
+    width: calc(100% - 280px); /* Mantém a largura original, mas de forma mais segura */
+    margin: 30px auto 0;      /* Centraliza horizontalmente e adiciona margem no topo */
+    position: relative;         /* Necessário para o z-index funcionar corretamente */
+    z-index: 10;                /* Garante que o header fique sobre o conteúdo */
+    margin-bottom: -115px;      /* Puxa o conteúdo de baixo para cima, criando o efeito de sobreposição */
+    
     max-width: 1640px;
-    z-index: 10;
 }
 
 .header {
@@ -65,7 +74,7 @@ body {
 }
 
 .nav a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s;
@@ -81,7 +90,7 @@ body {
 }
 
 .icons i {
-    color: white;
+    color: black;
     font-size: 20px;
     cursor: pointer;
 }
@@ -100,48 +109,24 @@ body {
     flex-basis: 58%;
     background: url(/src/assets/Images/imagem_fundo.jpg) no-repeat center center;
     background-size: cover;
-    position: relative; /* ADICIONE ESTA LINHA */
-    overflow: hidden;
 }
 
 .right-section {
     flex-basis: 42%;
-    background-color: #fff;
+    background-color: #f5f5f5; /* ALTERADO DE #fff PARA UM CINZA CLARO */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px;
-    
-    /* REMOVIDO: margin-left: -80px; */ 
-    /* REMOVIDO: clip-path: path(...) */
-    margin-left: 0; /* GARANTE ALINHAMENTO CORRETO */
-
-    /* ADICIONANDO O ARREDONDAMENTO AQUI */
-    border-top-right-radius: 40px; 
-    border-bottom-right-radius: 40px;
-
-    /* Garante que o painel de login fique por cima da curva diagonal */
-    z-index: 10; 
-}
-
-/* --- CURVA DIAGONAL DE CORTE --- */
-.curve-overlap {
-    position: absolute;
-    top: 0;
-    /* Ajuste de 58% para 42% */
-    left: 58%; 
-    width: 350px; 
-    height: 100%;
-    background-color: #fff; /* Cor branca para o corte */
-    transform: skewX(-12deg) translateX(-175px); /* Inclinação + Ajuste de posição */
-    z-index: 5; /* Fica entre o fundo e o painel de login */
-    box-shadow: -10px 0 15px rgba(0, 0, 0, 0.1); 
+    margin-left: -80px; 
+    clip-path: path('M 80 0 C 120 250, 120 750, 80 1000 L 2000 1000 L 2000 0 Z');
 }
 
 .login-container {
     max-width: 400px;
     width: 100%;
     text-align: center;
+    margin-left: 80px; /* Compensa o espaço da curva para centralizar o conteúdo */
 }
 
 .login-form {
@@ -158,13 +143,13 @@ body {
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #888;
+    color: black;
 }
 
 .input-group input {
     width: 100%;
     padding: 15px 15px 15px 50px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 30px;
     font-size: 16px;
     outline: none;
@@ -172,11 +157,11 @@ body {
 }
 
 .input-group input:focus {
-    border-color: #333;
+    border-color: black;
 }
 
 .or-separator {
-    color: #888;
+    color: black;
     margin: 25px 0;
 }
 
@@ -207,18 +192,21 @@ body {
 
 .social-btn.google {
     background-color: white;
-    color: #333;
+    color: black;
     border: 1px solid #ccc;
+    border-color: black;
 }
 
 .social-btn.facebook {
     background-color: #1877F2;
     color: white;
+    border-color: black;
 }
 
 .social-btn.apple {
     background-color: #000;
     color: white;
+    border-color: black;
 }
 
 .signup-link {
@@ -231,20 +219,6 @@ body {
     color: #000;
     text-decoration: underline;
     font-weight: 600;
-}
-
-/* CORREÇÃO FINAL PARA ALINHAMENTO DO INPUT DE EMAIL (SEM ÍCONE) */
-
-/* 1. Alinha o campo de email (primeiro input) para a esquerda, usando 20px de padding */
-.login-form .input-group:first-child input {
-    padding-left: 20px; 
-}
-
-/* 2. Remove o padding extra da senha, pois a regra geral (que já está correta na linha 200) já a cobre */
-.login-form .input-group:nth-child(2) input {
-    /* Não precisamos de uma regra aqui, pois a regra geral de 50px já se aplica ao input de senha.
-       A regra da linha 200: .input-group input { padding: 15px 15px 15px 50px; ... } já é suficiente! */
-    padding-left: 50px; /* Mas vamos manter para ter certeza que sobrescreve qualquer conflito */
 }
 
 /* ================================================= */
@@ -268,5 +242,15 @@ body {
     
     .nav {
        display: none; /* Esconde a navegação principal em telas menores */
+    }
+    
+    .header-container {
+        /* Ajuste para telas menores */
+        width: 90%;
+        margin-bottom: 0;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
