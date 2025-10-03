@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo - Login</title>
+
+  <!-- Importando o CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>       
+<body>
+  
+  <!-- ================== CONTAINER PRINCIPAL ================== -->
+  <div class="login-container">
+    
+    <!-- Lado da imagem -->
+    <div class="left-side"></div>
+
+    <!-- Lado do formulário -->
+    <div class="right-side">
+      <h2>Login do Administrador</h2>
+
+      <!-- Campo de email -->
+      <div class="input-box">
+        <i>📧</i>
+        <input type="email" id="email" placeholder="Digite seu email">
+      </div>
+
+      <!-- Campo de senha -->
+      <div class="input-box">
+        <i>🔒</i>
+        <input type="password" id="senha" placeholder="Digite sua senha">
+      </div>
+
+      <!-- Botão de login -->
+      <button class="btn" onclick="fazerLogin()">Entrar</button>
+
+      <p>ou entre com</p>
+
+      <!-- Login com redes sociais -->
+      <div class="social-login">
+        <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+        <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook">
+        <img src="https://img.icons8.com/ios-filled/50/mac-os.png" alt="Apple">
+      </div>
+
+      <!-- Link de cadastro -->
+      <p class="register">Não tem conta? <a href="#">Cadastrar-se</a></p>
+    </div>
+  </div>
+
+  <!-- ================== JAVASCRIPT ================== -->
+  <script>
+    // Função simples de login
+    function fazerLogin() {
+      // Pega os valores dos campos
+      let email = document.getElementById("email").value;
+      let senha = document.getElementById("senha").value;
+
+      // Validação básica
+      if(email === "" || senha === "") {
+        alert("Preencha todos os campos!");
+        return;
+      }
+
+      // Exemplo de verificação fake (poderia ser com banco de dados/API)
+      if(email === "admin@site.com" && senha === "1234") {
+        alert("Login realizado com sucesso!");
+        // Aqui você pode redirecionar para o painel adm
+        window.location.href = "painel.html";
+      } else {
+        alert("Email ou senha incorretos!");
+      }
+    }
+  </script>
+</body>
+</html>

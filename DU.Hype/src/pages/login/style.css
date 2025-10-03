@@ -1,0 +1,124 @@
+/* ================== RESET BÁSICO ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1616628182501-62a8d6ef72e5") no-repeat center center;
+  background-size: cover;
+}
+
+/* ================== CONTAINER GERAL ================== */
+.login-container {
+  display: flex;
+  width: 80%;
+  max-width: 1100px;
+  background: #fff;
+  border-radius: 40px 0 0 40px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+}
+
+/* ================== LADO ESQUERDO (IMAGEM) ================== */
+.left-side {
+  flex: 1;
+  background: url("https://images.unsplash.com/photo-1616628182501-62a8d6ef72e5") no-repeat center center;
+  background-size: cover;
+}
+
+/* ================== LADO DIREITO (FORMULÁRIO) ================== */
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* ================== INPUTS ================== */
+.input-box {
+  width: 100%;
+  max-width: 350px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  padding: 10px 15px;
+}
+
+.input-box i {
+  margin-right: 10px;
+}
+
+.input-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* ================== BOTÃO PRINCIPAL ================== */
+.btn {
+  width: 100%;
+  max-width: 350px;
+  margin: 20px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+/* ================== LOGIN SOCIAL ================== */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-login img {
+  width: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-login img:hover {
+  transform: scale(1.1);
+}
+
+/* ================== LINK DE CADASTRO ================== */
+.register {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register a {
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
