@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+/* -------------------------
+   HEADER
+------------------------- */
+.main-header {
+    position: fixed;
+    top: 30px;
+    left: 140px;
+    right: 140px;
+    max-width: 1920px;
+    margin: 0 auto;
+    z-index: 1000;
+    height: 85px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: rgba(168, 168, 168, 0.3);
+    border-radius: 100px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+    padding-top: 15px;
+}
+
+.main-nav a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1C1C1C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: #D70004;
+}
+
+.header-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.header-icons a {
+    font-size: 28px;
+    color: #1C1C1C;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #D70004;
+}
+
+/* -------------------------
+   CONTEÚDO PRINCIPAL
+------------------------- */
+main {
+    padding-top: 120px;
+}
+
+/* -------------------------
+   SEÇÃO HERO (BANNER)
+------------------------- */
+.hero-section {
+    margin: 30px 140px;
+    border-radius: 50px;
+    position: relative;
+    height: 35vw;
+    display: flex;
+    align-items: center;
+    padding: 0 95px;
+    color: #F1F1F1;
+    overflow: hidden;
+}
+
+.hero-section .carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-section .carousel-inner,
+.hero-section .carousel-item {
+    height: 100%;
+}
+
+.hero-section .carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 790px;
+    text-shadow: 2px 2px 4px rgba(90, 90, 90, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 10%;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 12px;
+}
+
+.hero-description {
+    font-size: 25px;
+    line-height: 30px;
+    max-width: 700px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.btn {
+    padding: 10px 32px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    box-shadow: #1c1c1c1f 0px 0px 4px, #1c1c1c1f 0px 0px 4px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-primary {
+    background-color: #D70004;
+    color: #f1f1f1;
+}
+
+.btn-primary:hover {
+    background-color: #F1F1F1;
+    color: #1C1C1C;
+    border-color: transparent;
+}
+
+.btn-secondary {
+    background-color: #F1F1F1;
+    color: #1C1C1C;
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    color: #f1f1f1;
+    border: 2px solid #f1f1f1;
+}
+
+.carousel-indicators-custom {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    margin: 0;
+    width: auto;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    z-index: 3;
+}
+
+.indicator-dot {
+    height: 7px;
+    width: 18px;
+    background-color: #1c1c1c;
+    border-radius: 23px;
+    transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+    width: 48px;
+    background-color: #D70004;
+}
+
+/* -------------------------
+   SEÇÃO DE PRODUTOS
+------------------------- */
+.product-showcase {
+    max-width: 1920px;
+    margin: 70px 140px;
+    padding: 0;
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+a.product-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-card {
+    background-color: #FFFFFF;
+    border: 1px solid #424242;
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-container {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.product-image-container img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-brand {
+    font-size: 12px;
+    color: #FFFFFF;
+    background-color: #1C1C1C;
+    padding: 6px 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.product-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1C1C1C;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.action-btn:hover {
+    background-color: #444;
+}
+
+.cart-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.buy-btn {
+    padding: 8px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}

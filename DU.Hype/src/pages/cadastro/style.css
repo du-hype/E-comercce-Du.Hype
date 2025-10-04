@@ -217,7 +217,7 @@ body {
 /* --- Seção da Imagem (Direita) --- */
 .image-section {
     /* ATENÇÃO: Coloque o caminho para sua imagem de fundo aqui */
-    background-image: url('/src/assets/Images/imamgem_fundo2.jpg');
+    background-image: url('/DU.Hype/src/assets/Images/imamgem_fundo2.jpg');
     background-size: cover;
     background-position: center;
 }

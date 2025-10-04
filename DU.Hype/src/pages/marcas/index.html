@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Marcas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Container geral -->
+  <div class="container">
+
+    <!-- Sidebar de filtros -->
+    <aside class="sidebar">
+      <h3>Filtrar Marcas</h3>
+      <form id="filtroForm">
+        <label><input type="checkbox" name="marca" value="Nike"> Nike</label>
+        <label><input type="checkbox" name="marca" value="Adidas"> Adidas</label>
+        <label><input type="checkbox" name="marca" value="Puma"> Puma</label>
+        <label><input type="checkbox" name="marca" value="Mizuno"> Mizuno</label>
+        <label><input type="checkbox" name="marca" value="Asics"> Asics</label>
+        <label><input type="checkbox" name="marca" value="Fila"> Fila</label>
+        <label><input type="checkbox" name="marca" value="New Balance"> New Balance</label>
+        <label><input type="checkbox" name="marca" value="Balenciaga"> Balenciaga</label>
+        <label><input type="checkbox" name="marca" value="Oakley"> Oakley</label>
+        <label><input type="checkbox" name="marca" value="Olympikus"> Olympikus</label>
+        <label><input type="checkbox" name="marca" value="Converse"> Converse</label>
+        <button type="button" onclick="filtrar()">Filtrar</button>
+      </form>
+    </aside>
+
+    <!-- Área de produtos -->
+    <main class="produtos">
+      <h2 id="tituloMarca">Adidas</h2>
+      <div class="grid" id="produtosGrid">
+        <!-- Os cards vão ser injetados pelo JS -->
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    // ================== LISTA DE PRODUTOS ==================
+    const produtos = [
+      {marca: "Adidas", nome: "Dime x Adidas ADI2000", preco: "R$1.199,00", img: "https://i.imgur.com/ZqAxJbV.png"},
+      {marca: "Nike", nome: "Air Force 1", preco: "R$899,00", img: "https://i.imgur.com/hM6H4uK.png"},
+      {marca: "Nike", nome: "Air Max 90", preco: "R$999,00", img: "https://i.imgur.com/zo6xULP.png"},
+      {marca: "Adidas", nome: "Yeezy Boost 350", preco: "R$1.499,00", img: "https://i.imgur.com/4mQ5pFO.png"},
+      {marca: "Puma", nome: "Puma RS-X", preco: "R$799,00", img: "https://i.imgur.com/T1z9FSy.png"},
+      {marca: "LV", nome: "Louis Vuitton Trainer", preco: "R$4.999,00", img: "https://i.imgur.com/ww8lqF6.png"}
+    ];
+
+    // ================== FUNÇÃO PARA MOSTRAR PRODUTOS ==================
+    function mostrarProdutos(lista) {
+      const grid = document.getElementById("produtosGrid");
+      grid.innerHTML = ""; // limpa o grid
+      lista.forEach(p => {
+        grid.innerHTML += `
+          <div class="card">
+            <img src="${p.img}" alt="${p.nome}">
+            <span class="marca">${p.marca}</span>
+            <h3>${p.nome}</h3>
+            <p class="preco">${p.preco}</p>
+            <button class="btn">🛒 Comprar</button>
+          </div>
+        `;
+      });
+    }
+
+    // ================== FUNÇÃO DE FILTRO ==================
+    function filtrar() {
+      const checkboxes = document.querySelectorAll("input[name='marca']:checked");
+      const marcasSelecionadas = Array.from(checkboxes).map(cb => cb.value);
+
+      // se nenhuma marca for selecionada, mostra tudo
+      if (marcasSelecionadas.length === 0) {
+        mostrarProdutos(produtos);
+        document.getElementById("tituloMarca").innerText = "Todas as Marcas";
+      } else {
+        const filtrados = produtos.filter(p => marcasSelecionadas.includes(p.marca));
+        mostrarProdutos(filtrados);
+        document.getElementById("tituloMarca").innerText = marcasSelecionadas.join(", ");
+      }
+    }
+
+    // Inicializa com Adidas como default
+    window.onload = () => {
+      const adidas = document.querySelector("input[value='Adidas']");
+      adidas.checked = true;
+      filtrar();
+    }
+  </script>
+
+</body>
+</html>
