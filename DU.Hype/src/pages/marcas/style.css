@@ -1,131 +1,175 @@
-/* ================== RESET ================== */
+/* ========== RESET ========== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  body {
-    background: #f9f9f9;
-    color: #000;
-  }
-  
-  /* ================== LAYOUT PRINCIPAL ================== */
-  .container {
-    display: flex;
-    width: 90%;
-    margin: 30px auto;
-    gap: 20px;
-  }
-  
-  /* ================== SIDEBAR (FILTROS) ================== */
-  .sidebar {
-    width: 220px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-  }
-  
-  .sidebar h3 {
-    margin-bottom: 15px;
-  }
-  
-  .sidebar label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-  }
-  
-  .sidebar input {
-    margin-right: 8px;
-  }
-  
-  .sidebar button {
-    margin-top: 15px;
-    width: 100%;
-    padding: 10px;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .sidebar button:hover {
-    background: #333;
-  }
-  
-  /* ================== PRODUTOS ================== */
-  .produtos {
-    flex: 1;
-  }
-  
-  .produtos h2 {
-    margin-bottom: 20px;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-  }
-  
-  /* ================== CARD DE PRODUTO ================== */
-  .card {
-    background: #fff;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.2s;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card img {
-    width: 100%;
-    max-height: 150px;
-    object-fit: contain;
-    margin-bottom: 10px;
-  }
-  
-  .marca {
-    display: inline-block;
-    background: #000;
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 12px;
-    margin-bottom: 8px;
-  }
-  
-  .card h3 {
-    font-size: 15px;
-    margin-bottom: 5px;
-  }
-  
-  .preco {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .btn {
-    width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 20px;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .btn:hover {
-    background: #333;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  overflow-x: hidden;
+}
+
+/* ========== HEADER / NAVBAR ========== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  background-color: rgba(168, 168, 168, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #777;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ========== CONTEÚDO GERAL ========== */
+.container {
+  display: flex;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 120px auto 40px; /* empurra o conteúdo para baixo da navbar */
+  padding: 0 20px;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+  width: 220px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+  margin-bottom: 15px;
+}
+
+.sidebar label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.sidebar input {
+  margin-right: 8px;
+}
+
+.sidebar button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sidebar button:hover {
+  background: #333;
+}
+
+/* ========== PRODUTOS ========== */
+.produtos {
+  flex: 1;
+}
+
+.produtos h2 {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ========== CARD ========== */
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.marca {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.preco {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #333;
+}

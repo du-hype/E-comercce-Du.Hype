@@ -7,11 +7,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="header">
+    <div class="logo">
+      <img src="/DU.Hype/src/assets/Images/LogoDu.Hype.svg" alt="Logo duhype">
+    </div>
 
-  <!-- Container geral -->
+    <nav class="nav">
+      <a href="/DU.Hype/index.html">Início</a>
+      <a href="/DU.Hype/src/pages/marcas/index.html">Marcas</a>
+      <a href="/DU.Hype/src/pages/fedd/index.html">Feed</a>
+      <a href="/DU.Hype/src/pages/novidades/index.html">Novidades</a>
+    </nav>
+
+    <div class="icons">
+      <i class="fas fa-shopping-cart"></i>
+      <i class="fas fa-user"></i>
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
   <div class="container">
-
-    <!-- Sidebar de filtros -->
+    <!-- Sidebar -->
     <aside class="sidebar">
       <h3>Filtrar Marcas</h3>
       <form id="filtroForm">
@@ -33,15 +51,11 @@
     <!-- Área de produtos -->
     <main class="produtos">
       <h2 id="tituloMarca">Adidas</h2>
-      <div class="grid" id="produtosGrid">
-        <!-- Os cards vão ser injetados pelo JS -->
-      </div>
+      <div class="grid" id="produtosGrid"></div>
     </main>
-
   </div>
 
   <script>
-    // ================== LISTA DE PRODUTOS ==================
     const produtos = [
       {marca: "Adidas", nome: "Dime x Adidas ADI2000", preco: "R$1.199,00", img: "https://i.imgur.com/ZqAxJbV.png"},
       {marca: "Nike", nome: "Air Force 1", preco: "R$899,00", img: "https://i.imgur.com/hM6H4uK.png"},
@@ -51,10 +65,9 @@
       {marca: "LV", nome: "Louis Vuitton Trainer", preco: "R$4.999,00", img: "https://i.imgur.com/ww8lqF6.png"}
     ];
 
-    // ================== FUNÇÃO PARA MOSTRAR PRODUTOS ==================
     function mostrarProdutos(lista) {
       const grid = document.getElementById("produtosGrid");
-      grid.innerHTML = ""; // limpa o grid
+      grid.innerHTML = "";
       lista.forEach(p => {
         grid.innerHTML += `
           <div class="card">
@@ -68,12 +81,9 @@
       });
     }
 
-    // ================== FUNÇÃO DE FILTRO ==================
     function filtrar() {
       const checkboxes = document.querySelectorAll("input[name='marca']:checked");
       const marcasSelecionadas = Array.from(checkboxes).map(cb => cb.value);
-
-      // se nenhuma marca for selecionada, mostra tudo
       if (marcasSelecionadas.length === 0) {
         mostrarProdutos(produtos);
         document.getElementById("tituloMarca").innerText = "Todas as Marcas";
@@ -84,13 +94,10 @@
       }
     }
 
-    // Inicializa com Adidas como default
     window.onload = () => {
-      const adidas = document.querySelector("input[value='Adidas']");
-      adidas.checked = true;
+      document.querySelector("input[value='Adidas']").checked = true;
       filtrar();
-    }
+    };
   </script>
-
 </body>
 </html>
