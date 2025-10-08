@@ -1,76 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Login</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <div class="header-container">
-        <header class="header">
-            <div class="logo">
-                <img src="/DU.Hype/src/assets/Images/LogoDu.Hype.svg" alt="Logo duhype">
-            </div>
-            <nav class="nav">
-                <a href="/DU.Hype/index.html">Início</a>
-                <a href="/DU.Hype/src/pages/marcas/index.html">Marcas</a>
-                <a href="/DU.Hype/src/pages/fedd/index.html">Feed</a>
-                <a href="/DU.Hype/src/pages/novidades/index.html">Novidades</a>
-            </nav>
-            <div class="icons">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-shopping-cart"></i>
-                <i class="fas fa-user"></i>
-            </div>
-        </header>
+  <div class="header-container">
+    <header class="header">
+      <div class="logo">
+        <img src="/DU.Hype/src/assets/Images/LogoDu.Hype.svg" alt="Logo duhype">
+      </div>
+      <nav class="nav">
+        <a href="/DU.Hype/index.html">Início</a>
+        <a href="/DU.Hype/src/pages/marcas/index.html">Marcas</a>
+        <a href="/DU.Hype/src/pages/fedd/index.html">Feed</a>
+        <a href="/DU.Hype/src/pages/novidades/index.html">Novidades</a>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-shopping-cart"></i>
+        <i class="fas fa-user"></i>
+      </div>
+    </header>
+  </div>
+
+  <main class="main-content">
+    <div class="left-section">
+      <!-- A imagem de fundo é definida no CSS -->
     </div>
-    
-    <main class="main-content">
-        <div class="left-section">
-            <!-- A imagem de fundo é definida no CSS -->
-        </div>
-        
-        <div class="curved-shape">
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M 0,0 L 100,0 C 100,50 80,100 0,100 Z" fill="#fff"/>
-            </svg>
+
+    <div class="curved-shape">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M 0,0 L 100,0 C 100,50 80,100 0,100 Z" fill="#fff"/>
+      </svg>
+    </div>
+
+    <div class="right-section">
+      <div class="login-container">
+        <form class="login-form" id="loginForm">
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="Digite seu email" required>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="senha" placeholder="Digite sua senha" required>
+          </div>
+          <button type="submit">Entrar</button>
+        </form>
+
+        <p class="or-separator">ou</p>
+
+        <div class="social-login">
+          <button class="social-btn google">
+            <i class="fab fa-google"></i> <a href="https://accounts.google.com">Login com Google</a>
+          </button>
+          <button class="social-btn facebook">
+            <i class="fab fa-facebook"></i> Login com Facebook
+          </button>
+          <button class="social-btn apple">
+            <i class="fab fa-apple"></i> Login com Apple
+          </button>
         </div>
 
-        <div class="right-section">
-            <div class="login-container">
-                <form class="login-form">
-                    <div class="input-group">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Digite seu email">
-                    </div>
-                    <div class="input-group">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Digite sua senha">
-                    </div>
-                </form>
-                
-                <p class="or-separator">ou</p>
-                
-                <div class="social-login">
-                    <button class="social-btn google">
-                        <i class="fab fa-google"></i> Login com Google
-                    </button>
-                    <button class="social-btn facebook">
-                        <i class="fab fa-facebook"></i> Login com Facebook
-                    </button>
-                    <button class="social-btn apple">
-                        <i class="fab fa-apple"></i> Login com Apple
-                    </button>
-                </div>
-                
-                <div class="signup-link">
-                    Não tem conta? <a href="#">Cadastrar-se</a>
-                </div>
-            </div>
+        <div class="signup-link">
+          Não tem conta? <a href="/DU.Hype/src/pages/cadastro/index.html">Cadastrar-se</a>
+          Não tem conta? <a href="/DU.Hype/src/pages/cadastro/index.html">Cadastrar-se</a>
         </div>
-    </main>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Login exclusivo de administrador
+    const emailAdmin = "admin@duhype.com";
+    const senhaAdmin = "senha123";
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+
+      if (email === emailAdmin && senha === senhaAdmin) {
+        window.location.href = "/DU.Hype/página adm/index.html"; // Página de admin
+      } else {
+        window.location.href = "/DU.Hype/src/pages/feed/index.html"; // Página comum
+      }
+    });
+  </script>
 </body>
-</html>>
+</html>
