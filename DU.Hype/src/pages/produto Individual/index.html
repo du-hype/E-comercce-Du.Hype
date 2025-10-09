@@ -3,57 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dime x Adidas ADI2000 - DUHYPE</title>
-  <!-- Link para o CSS externo -->
-  <link rel="stylesheet" href="style.css">
+  <title>Produto - DUHYPE</title>
+  
+  <link rel="stylesheet" href="/DU.Hype/src/assets/styles/styles.css"> 
+  <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
-  <!-- ================== CABEÇALHO ================== -->
   <header class="main-header">
-        <div class="header-container">
-            <a href="home.html" class="logo">
-                <img src="/DU.Hype/src/assets/Images/LogoDu.Hype.svg" alt="Logo DUHYPE">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Início</a></li>
-                    <li><a href="/DU.Hype/src/pages/marcas/index.html">Marcas</a></li>
-                    <li><a href="/DU.Hype/src/pages/fedd/index.html">Feed</a></li>
-                    <li><a href="/DU.Hype/src/pages/novidades/index.html">Novidades</a></li>
-                </ul>
-            </nav>
-            <div class="header-icons">
-                <a href="#" aria-label="Pesquisar"><img src="/DU.Hype/src/assets/Images/Search.svg" alt=""></a>
-                <a href="/DU.Hype/src/pages/carrinho/index.html" aria-label="Carrinho"><img src="/DU.Hype/src/assets/Images/Cart.svg" alt=""></a>
-                <a href="/DU.Hype/src/pages/cadastro/index.html" aria-label="Perfil do usuário"><img src="/DU.Hype/src/assets/Images/Account.svg" alt=""></a>
-            </div>
-        </div>
-    </header>
+      <div class="header-container">
+          <a href="/DU.Hype/index.html" class="logo">
+              <img src="/DU.Hype/src/assets/Images/LogoDu.Hype.svg" alt="Logo DUHYPE">
+          </a>
+          <nav class="main-nav">
+              <ul>
+                  <li><a href="/DU.Hype/index.html">Início</a></li>
+                  <li><a href="/DU.Hype/src/pages/marcas/index.html">Marcas</a></li>
+                  <li><a href="/DU.Hype/src/pages/fedd/index.html">Feed</a></li>
+                  <li><a href="/DU.Hype/src/pages/novidades/index.html">Novidades</a></li>
+              </ul>
+          </nav>
+          <div class="header-icons">
+              <a href="#" aria-label="Pesquisar"><img src="/DU.Hype/src/assets/Images/Search.svg" alt=""></a>
+              <a href="/DU.Hype/src/pages/carrinho/index.html" aria-label="Carrinho"><img src="/DU.Hype/src/assets/Images/Cart.svg" alt=""></a>
+              <a href="/DU.Hype/src/pages/cadastro/index.html" aria-label="Perfil do usuário"><img src="/DU.Hype/src/assets/Images/Account.svg" alt=""></a>
+          </div>
+      </div>
+  </header>
 
-  <!-- ================== CONTEÚDO PRINCIPAL ================== -->
   <main>
     <section class="produto">
-      <!-- Espaço para as imagens do tênis -->
       <div class="galeria">
-        <div class="thumbs">
-          <img src="/DU.Hype/src/assets/Images/19.jpg" alt="">
-          <img src="/DU.Hype/src/assets/Images/20.jpg" alt="">
-          <img src="/DU.Hype/src/assets/Images/21.jpg" alt="">
-          <img src="/DU.Hype/src/assets/Images/22.jpg" alt="">
-        </div>
+        <div id="thumbs-container" class="thumbs">
+          </div>
         <div class="imagem-principal">
-          <img src="/DU.Hype/src/assets/Images/23.jpg" alt="Tênis principal">
+          <img id="imagem-principal-produto" src="" alt="Tênis principal">
         </div>
       </div>
 
-      <!-- Informações do produto -->
       <div class="detalhes">
-        <h2>Dime x adidas ADI2000 <br> Light Brown Chalk White</h2>
+        <p id="marca-produto" class="marca-produto-individual">MARCA</p> <h2 id="nome-produto">Nome do Produto</h2>
         <div class="avaliacao">★★★★☆ (45 avaliações)</div>
-        <p class="preco">R$ 289,89 <span class="de">de R$ 489,90</span></p>
+        <p id="preco-produto" class="preco">R$ 0,00</p>
 
-        <!-- Botões de tamanho -->
         <div class="tamanhos">
           <button class="size">38</button>
           <button class="size ativo">40</button>
@@ -61,87 +53,81 @@
           <button class="size">42</button>
         </div>
 
-        <!-- Botão comprar -->
-        <button id="comprarBtn" class="comprar">COMPRAR</button>
+        <a href="/DU.Hype/src/pages/carrinho/index.html"><button id="comprarBtn" class="comprar">COMPRAR</button></a>
       </div>
     </section>
 
-    <!-- ================== CARACTERÍSTICAS ================== -->
     <section class="caracteristicas">
       <h3>Características</h3>
-      <p>
-        O ADI2000 traz de volta o espírito do skate do início dos anos 2000 com um design cheio de atitude. 
-        A collab com a Dime coloca esse conceito à prova: mesmo sem tanta sensibilidade da prancha, o modelo entrega uma resistência impressionante, 
-        com sobreposições de painéis costurados e uma sola de borracha robusta, além de um suporte de calcanhar pensado para aguentar o impacto. 
-        <br><br>
-        O Dime x adidas ADI2000 Light Brown Chalk White, lançado em 29/04/2024 na cor cinza, já está disponível na DU.HYPE. 
-        Garanta o seu com confiança e originalidade garantida.
+      <p id="descricao-produto">
+        A descrição do produto será carregada aqui...
       </p>
     </section>
 
-    <!-- ================== SEMELHANTES ================== -->
-    <section class="semelhantes">
-      <h3>Semelhantes</h3>
-      <div class="produtos">
-        <div class="card">
-          <p class="marca">PUMA</p>
-          <img src="/DU.Hype/src/assets/Images/29.jpg" alt="Puma 180 Strong Gray">
-          <p>Puma 180 Strong Gray</p>
-          <p class="preco">R$949,99</p>
-          <button class="comprar">COMPRAR</button>
-        </div>
+    </main>
 
-        <div class="card">
-          <p class="marca">NIKE</p>
-          <img src="/DU.Hype/src/assets/Images/35.jpg" alt="Nike Dunk Nature Blue">
-          <p>Dunk Nature Blue Tint</p>
-          <p class="preco">R$999,99</p>
-          <button class="comprar">COMPRAR</button>
-        </div>
-
-        <div class="card">
-          <p class="marca">ADIDAS</p>
-          <img src="/DU.Hype/src/assets/Images/A3-4.jpg" alt="Adidas ADI2000">
-          <p>Dime x Adidas ADI2000</p>
-          <p class="preco">R$1.199,00</p>
-          <button class="comprar">COMPRAR</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ================== FOOTER ================== -->
   <footer>
     <p>© 2024 DUHYPE - Todos os direitos reservados</p>
   </footer>
 
-  <!-- ================== JAVASCRIPT DIRETO NO HTML ================== -->
+  <script src="/DU.Hype/src/assets/js/produtos.js"></script>
+
   <script>
-    // ================== TROCAR TAMANHO ==================
+    // --- LÓGICA DINÂMICA PARA PREENCHER A PÁGINA ---
+    window.addEventListener('load', function() {
+        const params = new URLSearchParams(window.location.search);
+        const produtoId = params.get('id');
+        
+        // Verifica se a lista de produtos existe antes de continuar
+        if (typeof produtos === 'undefined') {
+            console.error("Erro: O arquivo produtos.js não foi encontrado ou está com erro.");
+            document.querySelector('main').innerHTML = '<h1 style="text-align:center; padding: 50px;">Erro ao carregar dados dos produtos.</h1>';
+            return;
+        }
+
+        const produto = produtos.find(p => p.id == produtoId);
+
+        if (produto) {
+            // Pega os elementos do HTML pelos IDs que adicionamos
+            const imagemPrincipalEl = document.getElementById('imagem-principal-produto');
+            const thumbsContainerEl = document.getElementById('thumbs-container');
+            const marcaEl = document.getElementById('marca-produto');
+            const nomeEl = document.getElementById('nome-produto');
+            const precoEl = document.getElementById('preco-produto');
+            const descricaoEl = document.getElementById('descricao-produto');
+
+            // Preenche os elementos com os dados do produto
+            document.title = produto.nome + " - DUHYPE";
+            imagemPrincipalEl.src = produto.imagem_principal;
+            imagemPrincipalEl.alt = produto.nome;
+            marcaEl.textContent = produto.marca;
+            nomeEl.textContent = produto.nome;
+            precoEl.textContent = produto.preco;
+            descricaoEl.textContent = produto.descricao;
+
+            // Limpa e cria as fotos pequenas (thumbnails)
+            thumbsContainerEl.innerHTML = '';
+            produto.imagens_thumb.forEach(thumbSrc => {
+                const img = document.createElement('img');
+                img.src = thumbSrc;
+                img.addEventListener('click', function() {
+                    imagemPrincipalEl.src = thumbSrc;
+                });
+                thumbsContainerEl.appendChild(img);
+            });
+
+        } else {
+            document.querySelector('main').innerHTML = '<h1 style="text-align:center; padding: 50px;">Produto não encontrado!</h1>';
+        }
+    });
+
+    // --- SCRIPT ANTIGO PARA SELEÇÃO DE TAMANHO ---
     const sizeButtons = document.querySelectorAll(".size");
     sizeButtons.forEach(btn => {
       btn.addEventListener("click", () => {
         sizeButtons.forEach(b => b.classList.remove("ativo"));
         btn.classList.add("ativo");
       });
-    });
-
-    // ================== BOTÃO COMPRAR ==================
-    document.getElementById("comprarBtn").addEventListener("click", () => {
-      alert("Produto adicionado ao carrinho!");
-    });
-
-    // ================== BOTÕES DO TOPO ==================
-    document.getElementById("searchBtn").addEventListener("click", () => {
-      alert("Função de busca em desenvolvimento...");
-    });
-
-    document.getElementById("userBtn").addEventListener("click", () => {
-      alert("Página de login em desenvolvimento...");
-    });
-
-    document.getElementById("cartBtn").addEventListener("click", () => {
-      alert("Abrindo carrinho...");
     });
   </script>
 </body>

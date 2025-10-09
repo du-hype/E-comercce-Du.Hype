@@ -127,6 +127,7 @@ body {
     width: 100%;
     text-align: center;
     margin-left: 80px; /* Compensa o espaço da curva para centralizar o conteúdo */
+    margin-top: 100px;
 }
 
 .login-form {
@@ -184,7 +185,13 @@ body {
     justify-content: center;
     gap: 10px;
     transition: opacity 0.3s;
+    text-decoration: none;
 }
+
+.link-sem-sublinhado {
+    text-decoration: none;
+}
+
 
 .social-btn:hover {
     opacity: 0.9;
@@ -195,6 +202,7 @@ body {
     color: black;
     border: 1px solid #ccc;
     border-color: black;
+    
 }
 
 .social-btn.facebook {
@@ -216,10 +224,30 @@ body {
 }
 
 .signup-link a {
-    color: #000;
+    color: black;
     text-decoration: underline;
     font-weight: 600;
+    text-decoration: none;  
 }
+.botao-entrar {
+    display: block;
+    margin: 20px auto;
+    width: 150px; /* deixa mais curto que os inputs */
+    height: 45px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-entrar:hover {
+    background-color: white;
+    color: black;
+}
+
 
 /* ================================================= */
 /* --- RESPONSIVIDADE (SEM ALTERAÇÕES) --- */

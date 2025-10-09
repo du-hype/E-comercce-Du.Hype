@@ -13,78 +13,81 @@ body {
 /* -------------------------
    HEADER
 ------------------------- */
-.main-header {
-    position: fixed;
-    top: 30px;
-    left: 140px;
-    right: 140px;
-    max-width: 1920px;
-    margin: 0 auto;
-    z-index: 1000;
-    height: 85px;
-    padding-left: 50px;
-    padding-right: 50px;
-    background-color: rgba(168, 168, 168, 0.3);
-    border-radius: 100px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
+/* --- HEADER / NAVBAR --- */
+.header {
+  /* Largura e Centralização */
+  width: 90%;
+  max-width: 1200px; /* Impede que fique largo demais em telas grandes */
+  margin: 20px auto 0 auto; /* 20px no topo, e centralizado horizontalmente */
+  
+  /* Posição Flutuante */
+  position: fixed; /* Fica fixo no topo da tela, mesmo com scroll */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Garante que fique acima de outros elementos */
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+  /* Estilo Glassmorphism */
+  height: 85px;
+  background-color: rgba(0, 0, 0, 0.25); /* Tom de vidro cinza */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  /* Layout Interno */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
 }
 
 .logo img {
-    height: 40px;
-    width: auto;
+  height: 40px;
+  width: auto;
 }
 
 .main-nav ul {
-    display: flex;
-    gap: 48px;
-    list-style: none;
-    padding-top: 15px;
+  display: flex;
+  gap: 48px;
+  list-style: none;
+  margin: 0; /* Remove margem padrão da lista */
 }
 
 .main-nav a {
-    font-size: 20px;
-    font-weight: 500;
-    color: #1C1C1C;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  font-size: 20px;
+  font-weight: 500;
+  color: #1C1C1C;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.main-nav a.active,
+
 .main-nav a:hover {
-    color: #D70004;
+  color: white;
 }
 
 .header-icons {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 .header-icons a {
-    font-size: 28px;
-    color: #1C1C1C;
-    transition: color 0.3s ease;
+  font-size: 24px; /* Ajustei o tamanho para ficar mais proporcional */
+  color: black;
+  transition: color 0.3s ease;
 }
 
 .header-icons a:hover {
-    color: #D70004;
+  color: black;
 }
 
-/* -------------------------
-   CONTEÚDO PRINCIPAL
-------------------------- */
+/* --- AJUSTE DO CONTEÚDO PRINCIPAL --- */
 main {
-    padding-top: 120px;
-    /* Adiciona espaço para o header não cobrir o conteúdo inicial */
+  padding-top: 150px; /* Aumenta o espaço no topo para o header não cobrir o conteúdo */
 }
+
 
 /* -------------------------
    SEÇÃO HERO (BANNER)

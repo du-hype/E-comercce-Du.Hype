@@ -11,6 +11,7 @@ body {
     width: 100vw;
     overflow: hidden; /* Evita barras de rolagem */
     position: relative;
+    
 }
 
 /* --- Header Flutuante (Glassmorphism) --- */
@@ -78,6 +79,7 @@ body {
     display: flex;
     gap: 25px; /* Espaço entre os ícones */
 }
+
 
 .icons i {
     color: black;
@@ -180,6 +182,8 @@ body {
     gap: 12px;
     transition: opacity 0.3s;
     border: 1px solid black;
+    text-decoration: none;
+    
     
 }
 
@@ -187,6 +191,11 @@ body {
     background-color: #fff; 
     color: black; 
     border-color: #000;
+    
+}
+
+.social-login a {
+    text-decoration: none;
 }
 
 .social-btn.facebook { 

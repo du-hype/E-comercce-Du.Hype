@@ -14,27 +14,41 @@ body {
 /* ================================================= */
 /* === ESTILOS DA NAVBAR (COM IMAGEM DA LOGO) === */
 /* ================================================= */
-
 .header {
-    width: 100%;
-    max-width: 1200px;
-    height: 85px;
-    background-color: rgba(168, 168, 168, 0.15);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 172px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
-    
-    position: relative;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
+  /* Largura menor e centralizada */
+  width: 90%; /* Ajuste a largura conforme preferir, 90% ou um valor fixo */
+  max-width: 1200px; /* Impede que fique grande demais em telas muito largas */
+  height: 85px;
+  
+  /* Efeito Glassmorphism */
+  background-color: rgba(180, 190, 180, 0.3); /* Fundo branco semitransparente */
+  backdrop-filter: blur(15px); /* Efeito de desfoque */
+  -webkit-backdrop-filter: blur(15px); /* Para navegadores WebKit (Safari, etc.) */
+  
+  /* Bordas Arredondadas */
+  border-radius: 50px; /* Ajuste o valor para o quão arredondada você quer */
+
+  /* Borda sutil */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda branca bem suave */
+
+  /* Sombra sutil (para dar profundidade) - opcional, mas recomendado */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  /* Centralização */
+  margin: 20px auto 0 auto; /* 20px de margem superior, auto centraliza horizontalmente */
+  
+  /* Layout interno (mantido igual) */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  
+  /* Posição: Se for flutuar sobre o conteúdo, 'absolute' ou 'fixed' */
+  position: absolute; /* ou 'fixed' se quiser que ela permaneça visível ao rolar */
+  top: 0; /* Alinha no topo */
+  left: 0; /* Essencial para o 'margin: auto' funcionar e centralizar */
+  right: 0; /* Essencial para o 'margin: auto' funcionar e centralizar */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
 }
 
 /* ESTILO DA IMAGEM DA LOGO */
@@ -54,15 +68,14 @@ body {
 }
 
 .nav a {
-    color: #333;
+    color: black;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 16px;
     transition: color 0.3s;
 }
 
 .nav a:hover {
-    color: #000;
+    color: white;
 }
 
 .icons {
